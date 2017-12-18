@@ -23,6 +23,8 @@ Route::get('/test', function () {
 })->middleware('auth:api');
 
 Route::group(['namespace' => 'sharedata', 'middleware' => 'cors'], function(){
+  Route::get('/report', 'Reports\IndexController@list');
 	Route::get('/report/industry', 'Reports\IndustryController@list');
+  Route::get('/report/{id}', 'Reports\IndexController@single');
 	Route::get('/report/industry/{id}', 'Reports\IndustryController@single');
 });
