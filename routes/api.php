@@ -22,7 +22,7 @@ Route::get('/test', function () {
   return [1];
 })->middleware('auth:api');
 
-Route::group(['namespace' => 'sharedata', 'middleware' => 'cors'], function(){
+Route::group(['namespace' => 'Sharedata', 'middleware' => 'cors'], function(){
   Route::get('/report', 'Reports\IndexController@list');
 	Route::get('/report/industry', 'Reports\IndustryController@list');
   Route::get('/report/{id}', 'Reports\IndexController@single');
