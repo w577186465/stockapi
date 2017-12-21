@@ -14,3 +14,7 @@
 Route::get('login', function () {
   return 'sdfdsf';
 })->name('login');
+
+Route::get('register', function () {
+  return 'sdfdsf';
+})->name('register');
