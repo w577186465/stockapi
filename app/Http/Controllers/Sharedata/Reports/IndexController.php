@@ -15,13 +15,13 @@ class IndexController extends ApiController
 {
     public function list(Request $request) {
         $pagesize = $request->input('pagesize', 50);
-        $data = Report::paginate($pagesize);
+        $data = Report::orderBy('created_at', 'desc')->paginate($pagesize);
         return $this->success($data, '获取成功');
     }
 
     public function single($id) {
       $data = Report::find($id);
-      $data->content = DB::table('hyreport_data')->find($id)->content;
+      $data->content = DB::table('hyreports_data')->find($id)->content;
       return $this->success($data, '获取成功');
     }
 }
