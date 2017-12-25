@@ -21,7 +21,7 @@ class IndexController extends ApiController
 
     public function single($id) {
       $data = Report::find($id);
-      $data->content = DB::table('hyreports_data')->find($id)->content;
+      $data->content = DB::table('reports_data')->find($id)->content;
       return $this->success($data, '获取成功');
     }
 }
