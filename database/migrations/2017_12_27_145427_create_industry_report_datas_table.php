@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReportsIndustryDataTable extends Migration
+class CreateIndustryReportDatasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateReportsIndustryDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('reports_industry_data', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('industry_report_datas', function (Blueprint $table) {
+            $table->integer('industry_report_id')->index();
             $table->text('content');
         });
     }
@@ -26,6 +26,6 @@ class CreateReportsIndustryDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports_industry_data');
+        Schema::dropIfExists('industry_report_datas');
     }
 }

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Report extends Model
+class IndustryReport extends Model
 {
   function data () {
-    return $this->hasOne('App\ReportData');
+    return $this->hasOne('App\IndustryReportData');
   }
 }

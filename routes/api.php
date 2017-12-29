@@ -28,3 +28,11 @@ Route::group(['namespace' => 'Sharedata', 'middleware' => 'cors'], function(){
   Route::get('/report/{id}', 'Reports\IndexController@single');
 	Route::get('/report/industry/{id}', 'Reports\IndustryController@single');
 });
+
+Route::group(['namespace' => 'Sharedata', 'middleware' => 'cors'], function(){
+  // 个股报表
+  Route::post('/report/add', 'Reports\IndexController@add');
+
+  // 行业报表
+  Route::post('/industry_report/add', 'Reports\IndustryController@add');
+});

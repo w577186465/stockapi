@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Hyreport extends Model
+class ReportData extends Model
 {
-    //
+  public $timestamps = false;
 }
