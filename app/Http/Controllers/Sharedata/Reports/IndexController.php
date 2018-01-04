@@ -18,9 +18,15 @@ class IndexController extends ApiController
   }
 
   public function single($id) {
-    $data = Report::find($id);
-    $data->content = ReportData::find($id)->content;
-    return $this->success($data, '获取成功');
+    $report = Report::find($id);
+    $data = $report->data;
+    if ($data) {
+      $report->content = $data->content;
+    } else {
+      $report->content = '';
+    }
+    
+    return $this->success($report, '获取成功');
   }
 
   public function add(Request $req) {

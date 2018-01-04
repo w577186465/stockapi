@@ -19,8 +19,13 @@ class IndustryController extends ApiController
 
   public function single($id) {
     $report = IndustryReport::find($id);
-    $data = IndustryReport::find($id)->content;
-    $report->content = $data->content;
+    $data = IndustryReport::find($id)->data;
+    if ($data) {
+      $report->content = $data->content;
+    } else {
+      $report->content = '';
+    }
+    
     return $this->success($report, '获取成功');
   }
 
